@@ -1,0 +1,96 @@
+<!-- history.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Family History - Edozie Family</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="css/lightbox.css" rel="stylesheet" />
+
+</head>
+<body>
+  <header>
+  <h1>Edozie Family</h1>
+  <!--<section class="family-quote">
+  <div id="quoteText">Loading quote...</div>
+</section> -->
+<section class="family-quote">
+  <div id="quoteText">Loading quote...</div>
+</section>
+
+
+
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <!-- Navigation Links -->
+  <nav id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="dues.html">Levies & Dues</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="history.html">History</a>
+    <a href="tree.html">Family Tree</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header> 
+
+  <main class="page-content">
+    <section class="history">
+      <h2>Our Family History</h2>
+      <p>
+        The Edozie family has a rich history dating back generations. This section tells our story:
+      </p>
+      <div class="history-block">
+        <h3>Founding Ancestor - Papa Edozie</h3>
+        <p>Born in ......,  Edozie was a visionary farmer and leader in our village...</p>
+      </div>
+      <div class="history-block">
+        <h3>Legacy Continues</h3>
+        <p>The family has grown across Nkwerre-Isu, Nigeria and abroad, maintaining strong unity through tradition, shared values, and annual gatherings...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Edozie Family. All rights reserved.</p>
+  </footer>
+  <script>
+  function toggleMenu() {
+    var nav = document.getElementById("navLinks");
+    nav.classList.toggle("show");
+  }
+</script>
+<script>
+  const links = document.querySelectorAll("nav a");
+  const current = window.location.pathname.split("/").pop();
+
+  links.forEach(link => {
+    if (link.getAttribute("href") === current) {
+      link.classList.add("active");
+    }
+  });
+</script>
+<script src="js/lightbox-plus-jquery.js"></script>
+<script>
+  const quotes = [
+    "History remembers those who preserve it.",
+    "Our legacy begins with their story.",
+    "The past shapes the strength of our future."
+  ];
+  let index = 0;
+  function rotateQuote() {
+    document.getElementById("quoteText").textContent = quotes[index];
+    index = (index + 1) % quotes.length;
+  }
+  rotateQuote();
+  setInterval(rotateQuote, 5000);
+</script>
+<script src="quotes.js"></script>
+
+
+
+</body>
+</html>

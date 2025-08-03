@@ -1,0 +1,100 @@
+ <!-- gallery.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery - Edozie Family</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="css/lightbox.css" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>Edozie Family</h1>
+    <section class="family-quote">
+      <div id="quoteText">Loading quote...</div>
+    </section>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="dues.html">Levies & Dues</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="history.html">History</a>
+      <a href="tree.html">Family Tree</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="gallery">
+      <h2>📸 Our Family Photo Gallery</h2>
+      <div class="gallery-grid">
+        <a href="images/family1.jpg" data-lightbox="gallery" data-title="Family Reunion">
+          <img src="images/family1.jpg" alt="Family 1" />
+        </a>
+        <a href="images/family2.jpg" data-lightbox="gallery" data-title="Wedding Day">
+          <img src="images/family2.jpg" alt="Family 2" />
+        </a>
+        <a href="images/family3.jpg" data-lightbox="gallery" data-title="Birthday Celebration">
+          <img src="images/family3.jpg" alt="Family 3" />
+        </a>
+        <a href="images/family4.jpg" data-lightbox="gallery" data-title="Graduation Day">
+          <img src="images/family4.jpg" alt="Family 4" />
+        </a>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <h2>📹 Family Videos</h2>
+      <div class="video-gallery">
+        <!-- Local MP4 Video -->
+        <video controls width="300">
+          <source src="videos/family-event.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- YouTube Embedded Video -->
+        <iframe width="300" height="180" src="https://www.youtube.com/embed/abcd1234" 
+          frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Edozie Family. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.getElementById("navLinks");
+      nav.classList.toggle("show");
+    }
+
+    const links = document.querySelectorAll("nav a");
+    const current = window.location.pathname.split("/").pop();
+    links.forEach(link => {
+      if (link.getAttribute("href") === current) {
+        link.classList.add("active");
+      }
+    });
+
+    const quotes = [
+      "A photo is a memory frozen in time.",
+      "Our smiles tell the story of generations.",
+      "Through these pictures, our love lives on."
+    ];
+
+    let index = 0;
+    function rotateQuote() {
+      document.getElementById("quoteText").textContent = quotes[index];
+      index = (index + 1) % quotes.length;
+    }
+    rotateQuote();
+    setInterval(rotateQuote, 5000);
+  </script>
+
+  <script src="js/lightbox-plus-jquery.js"></script>
+  <script src="quotes.js"></script>
+</body>
+</html>

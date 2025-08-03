@@ -1,0 +1,160 @@
+<!-- tree.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Family Tree - Edozie Family</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="css/lightbox.css" rel="stylesheet" />
+
+</head>
+<body>
+  <header>
+  <h1>👨‍👩‍👧‍👦 Edozie Family Tree</h1>
+ <section class="family-quote">
+  <div id="quoteText">Loading quote...</div>
+</section> 
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <!-- Navigation Links -->
+  <nav id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="dues.html">Levies & Dues</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="history.html">History</a>
+    <a href="tree.html">Family Tree</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+  <main class="page-content">
+    <section class="family-tree">
+  <h2>Our Family Tree</h2>
+  <button onclick="downloadTree()">📥 Download as PDF</button>
+  <div class="tree" id="treeArea">
+    <ul>
+      <li class="toggle">
+        <div class="member">Papa Edozie</div>
+        <ul>
+          <li>
+            <div class="member">Obiagwu</div>
+            <ul>
+              <li><div class="member">Updateing</div></li>
+              <li><div class="member">Upadating</div></li>
+            </ul>
+          </li>
+          <li class="toggle">
+            <div class="member">Samuel</div>
+            <ul>
+              <li><div class="member">Updateing</div></li>
+              <li><div class="member">Updateing</div></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="submit-info">
+  <h2>📝 Submit New Family Member Info</h2>
+  <form action="https://formsubmit.co/YOUR_EMAIL@example.com" method="POST" class="info-form">
+    <!-- Hidden settings -->
+    <input type="hidden" name="_next" value="thankyou.html" />
+    <input type="hidden" name="_captcha" value="false" />
+
+    <!-- Fields -->
+    <label>Full Name:
+      <input type="text" name="Full Name" required />
+    </label>
+
+    <label>Relation:
+      <input type="text" name="Relation" placeholder="e.g., Son of Obi Edozie" required />
+    </label>
+
+    <label>Birth Year:
+      <input type="number" name="Birth Year" placeholder="e.g., 1990" />
+    </label>
+
+    <label>Additional Notes:
+      <textarea name="Notes" rows="4" placeholder="e.g., Married to... Children..."></textarea>
+    </label>
+
+    <button type="submit">📩 Submit Info</button>
+  </form>
+</section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Edozie Family. All rights reserved.</p>
+  </footer>
+  <script>
+  function toggleMenu() {
+    var nav = document.getElementById("navLinks");
+    nav.classList.toggle("show");
+  }
+</script>
+<script>
+  const links = document.querySelectorAll("nav a");
+  const current = window.location.pathname.split("/").pop();
+
+  links.forEach(link => {
+    if (link.getAttribute("href") === current) {
+      link.classList.add("active");
+    }
+  });
+</script>
+<script src="js/lightbox-plus-jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+<script>
+  function downloadTree() {
+    const treeElement = document.getElementById('treeArea');
+    html2pdf().from(treeElement).save('Edozie-Family-Tree.pdf');
+  }
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggles = document.querySelectorAll(".tree li.toggle > .member");
+
+    toggles.forEach(member => {
+      member.style.cursor = "pointer";
+      member.addEventListener("click", () => {
+        const parentLi = member.parentElement;
+        const childUl = parentLi.querySelector("ul");
+        if (childUl) {
+          childUl.style.display = (childUl.style.display === "none") ? "block" : "none";
+        }
+      });
+    });
+
+    // Collapse all by default
+    document.querySelectorAll(".tree li.toggle > ul").forEach(ul => {
+      ul.style.display = "none";
+    });
+  });
+</script>
+<script>
+   const quotes = [
+  "From strong roots grow great branches.",
+  "Our tree stands tall because of those before us.",
+  "Generations connect us beyond time."
+];
+
+  let index = 0;
+  function rotateQuote() {
+    document.getElementById("quoteText").textContent = quotes[index];
+    index = (index + 1) % quotes.length;
+  }
+  rotateQuote();
+  setInterval(rotateQuote, 5000);
+</script>
+
+<script src="quotes.js"></script>
+
+
+
+</body>
+</html>

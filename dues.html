@@ -1,0 +1,101 @@
+ <!-- dues.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Levies & Dues - Edozie Family</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="css/lightbox.css" rel="stylesheet" />
+</head>
+<body>
+
+<header>
+  <h1>Edozie Family</h1>
+  <section class="family-quote">
+    <div id="quoteText">Loading quote...</div>
+  </section>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <nav id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="dues.html">Levies & Dues</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="history.html">History</a>
+    <a href="tree.html">Family Tree</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="excel-display">
+    <h2>📊 Family Levies & Dues</h2>
+    <p>This section displays the latest family financial contributions and levies, auto-synced from Google Sheets.</p>
+
+    <!-- Live Google Sheet -->
+    <div class="google-sheet">
+      <h3>🔄 Live Sheet View</h3>
+      <iframe 
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQaZgZ-v_TiUTF6zzO1w0hZ8WuywJED7zo2_BTFBqP9PsJ38xT3mGiX8eViiHczrp41DkqZjBt3zmf5/pubhtml?widget=true&amp;headers=false"
+        width="100%" 
+        height="500" 
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Download Button -->
+    <div class="download-link">
+      <a 
+        href="https://docs.google.com/spreadsheets/d/1oZFY8-fzVnIB4CX77tymBeg0wCugnGIKyFDVwGMefDQ/export?format=xlsx" 
+        target="_blank" 
+        class="btn-download">
+        📥 Download Excel File
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Edozie Family. All rights reserved.</p>
+</footer>
+
+<!-- Navigation Toggle -->
+<script>
+  function toggleMenu() {
+    var nav = document.getElementById("navLinks");
+    nav.classList.toggle("show");
+  }
+
+  const links = document.querySelectorAll("nav a");
+  const current = window.location.pathname.split("/").pop();
+  links.forEach(link => {
+    if (link.getAttribute("href") === current) {
+      link.classList.add("active");
+    }
+  });
+</script>
+
+<!-- Lightbox -->
+<script src="js/lightbox-plus-jquery.js"></script>
+
+<!-- Rotating Quotes -->
+<script>
+  const quotes = [
+    "Together we build a stronger family.",
+    "Every contribution is a seed for growth.",
+    "Support today secures tomorrow’s legacy."
+  ];
+  let index = 0;
+  function rotateQuote() {
+    document.getElementById("quoteText").textContent = quotes[index];
+    index = (index + 1) % quotes.length;
+  }
+  rotateQuote();
+  setInterval(rotateQuote, 5000);
+</script>
+
+<script src="quotes.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!--   Home      -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edozie Family - Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="css/lightbox.css" rel="stylesheet" />
+  <style>
+    .feature-card {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transform: translateY(-3px);
+      transition: 0.3s;
+    }
+
+    .gallery-banner {
+      background: #fff;
+      margin: 30px auto;
+      padding: 15px 25px;
+      width: fit-content;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    } 
+
+    .gallery-banner a {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: bold;
+      background: #3498db;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .gallery-banner a:hover {
+      background: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <h1>Edozie Family</h1>
+<!--<section class="family-quote">
+  <div id="quoteText">"Unity is strength."</div>
+</section>-->
+<section class="family-quote">
+  <div id="quoteText">"Unity is strength."</div>
+</section>
+<!-- Hamburger Icon -->
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <!-- Navigation Links -->
+  <nav id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="dues.html">Levies & Dues</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="history.html">History</a>
+    <a href="tree.html">Family Tree</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+ 
+
+  <main>
+    <section class="hero">
+      <h2>Welcome to the Edozie Family Website</h2>
+      <p>Celebrating unity, love, and shared legacy.</p>
+    </section>
+    <!--
+    <section class="welcome-media">
+  <h2>Welcome Message from the Family Elder</h2>
+  <video controls poster="images/welcome-thumbnail.jpg" width="100%" style="max-width: 700px; border-radius: 12px;">
+    <source src="media/welcome-message.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</section> -->
+
+
+    <!-- Small rectangular gallery box below hero -->
+    <div class="gallery-banner">
+      <a href="gallery.html">View Our Gallery</a>
+    </div>
+
+    <!-- Clickable feature boxes -->
+    <section class="features">
+      <a class="feature-card" href="gallery.html">
+        <div>
+          <img src="icons/gallery.png" alt="Gallery Icon" />
+
+          <h3>Family Gallery</h3>
+          <p>Explore beautiful family moments captured over the years.</p>
+        </div>
+      </a>
+
+      <a class="feature-card" href="dues.html">
+        <div>
+          <img src="icons/pay-dues.png" alt="Levies & Dues Icon" />
+          <h3>Levies & Dues</h3>
+          <p>Stay informed on financial contributions and dues records.</p>
+        </div>
+      </a>
+
+      <a class="feature-card" href="contact.html">
+        <div>
+          <img src="icons/contact.png" alt="Contact Icon" />
+          <h3>Contact Leadership</h3>
+          <p>Reach out to the Elder, Chairman, and Secretary of our family.</p>
+        </div>
+      </a>
+    </section>
+  </main>
+
+
+  <footer>
+    <p>&copy; 2025 Edozie Family. All rights reserved.</p>
+  </footer>
+  <script>
+  function toggleMenu() {
+    var nav = document.getElementById("navLinks");
+    nav.classList.toggle("show");
+  }
+</script>
+<script>
+  const quotes = [
+    "Unity is strength.",
+    "Together we grow, together we thrive.",
+    "Our roots run deep, our bonds run deeper.",
+    "Family is not an important thing. It’s everything.",
+    "Bound by love, built on legacy.",
+    "Preserving the past, embracing the future."
+  ];
+
+  let quoteIndex = 0;
+  function rotateQuote() {
+    quoteIndex = (quoteIndex + 1) % quotes.length;
+    document.getElementById("quoteText").textContent = quotes[quoteIndex];
+  }
+
+  setInterval(rotateQuote, 5000);
+</script>
+
+ 
+<script src="js/lightbox-plus-jquery.js"></script>
+<script src="quotes.js"></script>
+</body>
+
+</body>
+</html>
+
+     

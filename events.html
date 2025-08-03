@@ -1,0 +1,138 @@
+<!-- events.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upcoming Events - Edozie Family</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="css/lightbox.css" rel="stylesheet" />
+
+</head>
+<body>
+ <header>
+  <h1>Edozie Family</h1>
+ <section class="family-quote">
+  <div id="quoteText">Loading quote...</div>
+</section> 
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <!-- Navigation Links -->
+  <nav id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="dues.html">Levies & Dues</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="history.html">History</a>
+    <a href="tree.html">Family Tree</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+ 
+
+  <main class="page-content">
+    <!--<section class="events-section">
+      <h2>Upcoming Family Events</h2>
+      <table class="events-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Event</th>
+            <th>Description</th>
+          </tr>
+        </thead> -->
+
+        <!--<tbody>
+          <tr>
+            <td>August 16, 2025</td>
+            <td>Iriji Owerre Nkwoji </td>
+            <td>At Central School Owerre Nkwoji.</td>
+          </tr>
+          <tr>
+            <td>December 31, 2025</td>
+            <td>End-of-Year Celebration</td>
+            <td>Family get-together, awards, and celebration of progress made in the year.</td>
+          </tr>
+          <tr>
+            <td>June, 2026</td>
+            <td>Mid Year Meeting</td>
+            <td>Programs upcoming.</td>
+          </tr>
+        </tbody> 
+      </table>
+    </section>-->
+    <section class="event-calendar">
+  <h2>📅 Upcoming Family Events</h2>
+  <table class="calendar-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Event</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>August 16, 2025</td>
+        <td> Iriji Owerre Nkwoji</td>
+        <td> Central School Ow/Nkwoji</td>
+      </tr>
+      <tr>
+        <td>December 31, 2025</td>
+        <td>Family General Meeting,family get-together, awards, and celebration of progress made in the year.</td>
+        <td>Owerri Civic Center</td>
+      </tr>
+      <tr>
+        <td>June, 2026</td>
+        <td>Family General Meeting/Village</td>
+        <td>Edozie Villa and Hall Respectivily</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Edozie Family. All rights reserved.</p>
+  </footer>
+  <script>
+  function toggleMenu() {
+    var nav = document.getElementById("navLinks");
+    nav.classList.toggle("show");
+  }
+</script>
+<script>
+  const links = document.querySelectorAll("nav a");
+  const current = window.location.pathname.split("/").pop();
+
+  links.forEach(link => {
+    if (link.getAttribute("href") === current) {
+      link.classList.add("active");
+    }
+  });
+</script>
+<script src="js/lightbox-plus-jquery.js"></script>
+<script>
+  const quotes = [
+    "Celebrating moments, one memory at a time.",
+    "Every gathering strengthens our bond.",
+    "Together, we mark time with joy."
+  ];
+  let index = 0;
+  function rotateQuote() {
+    document.getElementById("quoteText").textContent = quotes[index];
+    index = (index + 1) % quotes.length;
+  }
+  rotateQuote();
+  setInterval(rotateQuote, 5000);
+</script>
+
+<script src="quotes.js"></script>
+
+
+</body>
+</html>
