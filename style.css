@@ -1,5 +1,4 @@
-
-/* General Reset */
+  /* General Reset */ 
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -729,27 +728,78 @@ nav a {
   object-fit: cover;
   margin-bottom: 15px;
 }
-
-./*welcome-media {
-  text-align: center;
-  margin: 40px auto;
+/* Account Details Styling */
+.account-details {
+  margin-top: 30px;
   padding: 20px;
-  max-width: 800px;
-  background: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.welcome-media h2 {
-  margin-bottom: 20px;
-  color: #333;
-}*/
+.account-details h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.account-card {
+  background: #ffffff;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.account-card p {
+  margin: 8px 0;
+}
+
+.account-card strong {
+  color: #2c3e50;
+}
+.copy-btn {
+    background-color: #c62828; /* deep warm red */
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.copy-btn:hover {
+    background-color: #a31616; /* darker red on hover */
+    transform: scale(1.05);
+}
+
+.copy-btn:active {
+    background-color: #8b0000; /* deep pressed red */
+    transform: scale(0.98);
+}
 
 
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .account-details, .account-card {
+    padding: 15px;
+    font-size: 15px;
+  }
+}
+/* google-sheet */
+@media screen and (max-width: 600px) {
+  .excel-display {
+    padding: 1rem 0.5rem;
+  }
 
+  .google-sheet iframe {
+    height: 400px;
+  }
+} /* ✅ Closed the 600px media query */
 
 /* ========== MOBILE RESPONSIVE DESIGN ========== */
-
 @media (max-width: 768px) {
   body {
     padding: 10px;
@@ -807,18 +857,7 @@ nav a {
     height: 100px;
     margin-bottom: 10px;
   }
-
-/*google-sheet */
-@media screen and (max-width: 600px) {
-  .excel-display {
-    padding: 1rem 0.5rem;
-  }
-
-  .google-sheet iframe {
-    height: 400px;
-  }
 }
-
 
 /* Responsive styles */
 @media (max-width: 768px) {
@@ -848,15 +887,20 @@ nav a {
   nav a {
     padding: 10px;
     margin: 0;
-    border-top: 1px solid #444;
-  }
+    border-top: 1
+
+
+
+./*welcome-media {
+  text-align: center;
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 800px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-nav a.active {
-  background-color: #ecf0f1;
-  color: #2c3e50;
-  font-weight: bold;
-  border-radius: 5px;
-}
-html {
-  scroll-behavior: smooth;
-}
+
+.welcome-media h2 {
+  margin-bottom: 20px;
+  color: #333;} */

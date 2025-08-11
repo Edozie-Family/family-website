@@ -1,4 +1,4 @@
- <!-- dues.html -->
+  <!-- dues.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +7,26 @@
   <title>Levies & Dues - Edozie Family</title>
   <link rel="stylesheet" href="style.css" />
   <link href="css/lightbox.css" rel="stylesheet" />
+  <style>
+    .copy-btn {
+      padding: 5px 10px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 8px;
+    }
+    .copy-btn:hover {
+      background: #0056b3;
+    }
+    #copyMsg {
+      color: green;
+      font-size: 0.9em;
+      margin-left: 10px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -19,7 +39,7 @@
   <div class="hamburger" onclick="toggleMenu()">☰</div>
   <nav id="navLinks">
     <a href="index.html">Home</a>
-    <a href="dues.html">Levies & Dues</a>
+    <a href="dues.html" class="active">Levies & Dues</a>
     <a href="gallery.html">Gallery</a>
     <a href="history.html">History</a>
     <a href="tree.html">Family Tree</a>
@@ -37,7 +57,7 @@
     <div class="google-sheet">
       <h3>🔄 Live Sheet View</h3>
       <iframe 
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQMJQz_q6zq-N7zpAMUdsK8IfubOQX2IOnQVsS9p2tbPDQgCoWY47ONsTcYg1T8OZdQR-_TkH5CN91Y/pubhtml? widget=true&amp;headers=false"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQMJQz_q6zq-N7zpAMUdsK8IfubOQX2IOnQVsS9p2tbPDQgCoWY47ONsTcYg1T8OZdQR-_TkH5CN91Y/pubhtml?widget=true&amp;headers=false"
         width="100%" 
         height="500" 
         frameborder="0"
@@ -55,6 +75,24 @@
       </a>
     </div>
   </section>
+
+  <!-- Bank Account Details -->
+  <section class="account-details">
+    <h2>🏦 Bank Account Details</h2>
+    <p>Please use our temporarily account below for all contributions and dues [new account details will update soon].</p>
+    <div class="account-card">
+      <p><strong>Bank Name:</strong> Opay</p>
+      <p><strong>Account Name:</strong> Edozie Bright Okey</p>
+      <p>
+        <strong>Account Number:</strong> 
+        <span id="accountNumber">8038572874</span>
+        <button class="copy-btn" onclick="copyAccountNumber()">Copy</button>
+        <span id="copyMsg">✅ Copied!</span>
+      </p>
+      <p><strong>Branch:</strong> Lagos Main Branch</p>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -94,6 +132,20 @@
   }
   rotateQuote();
   setInterval(rotateQuote, 5000);
+</script>
+
+<!-- Copy Account Number -->
+<script>
+  function copyAccountNumber() {
+    const accNumber = document.getElementById("accountNumber").innerText;
+    navigator.clipboard.writeText(accNumber).then(() => {
+      const msg = document.getElementById("copyMsg");
+      msg.style.display = "inline";
+      setTimeout(() => {
+        msg.style.display = "none";
+      }, 1500);
+    });
+  }
 </script>
 
 <script src="quotes.js"></script>
